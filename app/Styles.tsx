@@ -42,6 +42,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginLeft: 10,
   },
+  taskTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#360602",
+    marginBottom: 2,
+  },
+  taskDescription: {
+    fontSize: 16,
+    color: "#4b0902",
+  },
   itemList: {
     fontSize: 18,
     marginRight: 10,

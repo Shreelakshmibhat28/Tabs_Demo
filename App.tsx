@@ -7,10 +7,16 @@ import AppBar from "./app/AppBar";
 import styles from "./app/Styles";
 import { View } from "react-native";
 
+interface Task {
+  
+  title: string;
+  description: string;
+}
+
 const Tab = createMaterialTopTabNavigator();
 
-const App = () => {
-  const [tasks, setTasks] = useState<string[]>([]);
+const App: React.FC  = () => {
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [editIndex, setEditIndex] = useState<number | null>(null);
   
   return (
