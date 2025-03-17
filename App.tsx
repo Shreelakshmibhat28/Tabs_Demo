@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import TaskInputScreen from "./app/AddTaskTab";
+import TaskListScreen from "./app/TaskListTab";
+import AppBar from "./app/AppBar";
 
-export default function App() {
+const Tab = createMaterialTopTabNavigator();
+
+const App = () => {
+  const [tasks, setTasks] = useState<string[]>([]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <AppBar />
+      <Tab.Navigator>
+        <Tab.Screen name="Add Task" >
+          {() => <TaskInputScreen tasks={tasks} setTasks={setTasks} />}
+        </Tab.Screen>
+        <Tab.Screen name="Task List">
+          {() => <TaskListScreen tasks={tasks} setTasks={setTasks} />}
+        </Tab.Screen>
+      </Tab.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
