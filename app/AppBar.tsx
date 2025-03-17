@@ -10,17 +10,6 @@ const AppBar: React.FC = () => {
   );
 };
 
-// const styles = StyleSheet.create({
-//   appBar: {
-//     backgroundColor: "#6200ee",
-//     padding: 15,
-//     alignItems: "center",
-//   },
-//   titlehead: {
-//     color: "white",
-//     fontSize: 20,
-//     fontWeight: "bold",
-//   },
-// });
+
 
 export default AppBar;

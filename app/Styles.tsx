@@ -21,10 +21,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   addButton: {
-    backgroundColor: "green",
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 10,
+    backgroundColor: "#360602",
+    padding: 20,
+    borderRadius: 15,
+    marginTop:20,
+    marginRight: 75,
+    marginLeft: 75,
+    marginBottom: 20,
   },
   addButtonText: {
     color: "white",
@@ -37,15 +40,30 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 15,
-    fontSize: 18,
+    marginLeft: 10,
   },
   itemList: {
-    fontSize: 19,
-  },
-  deleteButton: {
-    color: "red",
-    fontWeight: "bold",
     fontSize: 18,
+    marginRight: 10,
+  },
+ taskbuttons : {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 10,
+ },
+
+  taskcard: {
+    marginVertical: 10,
+    marginHorizontal: 0,
+    padding: 5,
+    borderRadius: 0,
+    backgroundColor: "#f0e6e5",
+    elevation: 3, // For Android shadow
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
   },
 
   appBar: {
@@ -65,6 +83,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#4b0902",
+  },
+  tabBar: {
+    marginTop:20,
+    backgroundColor: "#98554f",
+  },
+  tabLabel: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "white",
+  },
+  tabIndicator: {
+    backgroundColor: "white",
+    height: 5,
+  },
+  containertab: {
+    flex: 1,
+    marginTop: -30,
   },
 });
 
