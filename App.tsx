@@ -1,48 +1,24 @@
+
 import React, { useState } from "react";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import TaskInputScreen from "./app/AddTaskTab";
-import TaskListScreen from "./app/TaskListTab";
 import AppBar from "./app/AppBar";
-import styles from "./app/Styles";
-import { View } from "react-native";
+import Tabs from "./app/Tabs";
 
 interface Task {
-  
   title: string;
   description: string;
 }
 
-const Tab = createMaterialTopTabNavigator();
-
-const App: React.FC  = () => {
+const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [editIndex, setEditIndex] = useState<number | null>(null);
-  
+
   return (
     <NavigationContainer>
-      
       <AppBar />
-      <View style={styles.containertab}>
-      <Tab.Navigator
-        screenOptions={{
-          tabBarStyle: styles.tabBar,
-          tabBarLabelStyle: styles.tabLabel,
-          tabBarIndicatorStyle: styles.tabIndicator,
-        }}
-      >
-       <Tab.Screen name="Add Task" >
-          {() => <TaskInputScreen tasks={tasks} setTasks={setTasks} editIndex={editIndex} setEditIndex={setEditIndex}/>}
-        </Tab.Screen>
-        <Tab.Screen name="Task List">
-          {() => <TaskListScreen tasks={tasks} setTasks={setTasks} setEditIndex={setEditIndex}/>}
-        </Tab.Screen>
-      </Tab.Navigator>
-      </View>
+      <Tabs tasks={tasks} setTasks={setTasks} editIndex={editIndex} setEditIndex={setEditIndex} />
     </NavigationContainer>
   );
 };
-
-
 
 export default App;
